@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
 with success as (
-    select user_id, coalesce(count(*),0) as amount
+    select user_id, count(*) as amount
     from confirmations
     where action='confirmed'
     group by user_id
